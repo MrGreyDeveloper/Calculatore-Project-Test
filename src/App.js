@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
+import Button from "./components/Button/Button";
+import Display from "./components/Display/Display";
+import ClearButton from "./components/ClearButton/ClearButton";
+import DeleteButton from "./components/DeleteButton/DeleteButton";
+import EqualsButton from "./components/EqualsButton/EqualsButton";
 import { evaluateExpression } from "./utils";
 
 function App() {
@@ -31,38 +36,27 @@ function App() {
     ));
   };
 
-  const Button = ({ value, onClick, className = "" }) => (
-    <input
-      type="button"
-      value={value}
-      onClick={onClick}
-      className={className}
-    />
-  );
-
   return (
     <div className="container">
       <div className="calculator">
         <form action="">
-          <div className="display">
-            <input type="text" value={value} readOnly />
-          </div>
+          <Display value={value} />
           <div>
-            <Button value="AC" onClick={handleClearClick} />
-            <Button value="DE" onClick={handleDeleteClick} />
+            <ClearButton onClick={handleClearClick} />
+            <DeleteButton onClick={handleDeleteClick} />
             <Button value="." onClick={handleClick} />
             <Button value="/" onClick={handleClick} />
           </div>
 
           <div>{renderButtons(["7", "8", "9", "*"], handleClick)}</div>
 
-          <div>{renderButtons(["4", "5", 6, "+"], handleClick)}</div>
+          <div>{renderButtons(["4", "5", "6", "+"], handleClick)}</div>
 
           <div>{renderButtons(["1", "2", "3", "-"], handleClick)}</div>
 
           <div>
             {renderButtons(["00", "0"], handleClick)}
-            <Button value="=" onClick={handleEqualClick} className="equal" />
+            <EqualsButton onClick={handleEqualClick} className="equal" />
           </div>
         </form>
       </div>
