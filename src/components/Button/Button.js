@@ -1,7 +1,10 @@
 import React from "react";
+import MuiButton from "@mui/material/Button";
 
-const Button = ({ value, onClick, className = "" }) => (
-  <input type="button" value={value} onClick={onClick} className={className} />
+const CustomButton = ({ value, onClick, className = "" }) => (
+  <MuiButton onClick={onClick} className={className}>
+    {value}
+  </MuiButton>
 );
 
-export default Button;
+export default CustomButton;
