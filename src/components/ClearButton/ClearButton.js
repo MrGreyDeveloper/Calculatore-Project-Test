@@ -1,7 +1,10 @@
 import React from "react";
+import Button from "@mui/material/Button";
 
 const ClearButton = ({ onClick }) => (
-  <input type="button" value="AC" onClick={onClick} className="clear-button" />
+  <Button variant="outlined" onClick={onClick}>
+    AC
+  </Button>
 );
 
 export default ClearButton;
