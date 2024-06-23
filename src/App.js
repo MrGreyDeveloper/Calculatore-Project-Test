@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import Button from "@mui/material/Button";
-import Display from "./components/Display/Display.js";
-import ClearButton from "./components/ClearButton/ClearButton.js";
+import Display from "./components/Display";
+import { ClearButton } from "./components/ClearButton";
 import DeleteButton from "./components/DeleteButton/DeleteButton.js";
 import { evaluateExpression } from "./utils";
 
